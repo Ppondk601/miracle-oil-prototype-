@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <header class="header">
-            <navBar />
+            <newNavbar />
         </header>
         <div class="history">
             <div class="image">
@@ -81,6 +81,7 @@ export default {
             }
 
             #image2 {
+                border: 0.5px solid white;
                 height: 44vh;
                 position: absolute;
                 right: 10%;

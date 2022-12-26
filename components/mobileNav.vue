@@ -48,15 +48,15 @@ export default {
   data() {
     return {
       active: false,
-      show: true,
+      show: false,
     };
   },
   methods: {
     onClick() {
       this.active = !this.active;
-      // document.querySelector("#main-container").style.overflowY = this.active
-      //   ? "hidden"
-      //   : "scroll";
+      document.getElementsByTagName("body")[0].style.overflowY = this.active
+        ? "hidden"
+        : "scroll";
     },
     hideLink() {
       this.show = !this.show;
@@ -83,7 +83,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: max-content;
   align-items: center;
   overflow: hidden;
 
@@ -104,6 +104,7 @@ export default {
         width: 100%;
         text-align: center;
         margin-left: 1rem;
+        font-weight: 700;
       }
     }
     .burger-bar {
@@ -146,11 +147,15 @@ export default {
     background-color: #24292e;
     transition-duration: 0.3s;
     width: 100%;
+    pointer-events: all;
+    transform: translateY(-100%);
+    position: fixed;
     &.active {
       visibility: visible;
       height: 100%;
       opacity: 1;
       transition-duration: 0.3s;
+      transform: translateY(0%);
     }
     .item-hidden {
       display: flex;

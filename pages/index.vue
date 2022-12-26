@@ -1,20 +1,24 @@
 <template>
-  <div class="container" id="main-container">
-    <header class="navBar" id="navbar">
-      <div class="normaly-bar"><newNavbar /></div>
-      <div class="mobile-bar"><mobileNav /></div>
-    </header>
-    <div class="heroSection">
-      <heroSection />
-    </div>
-    <div class="propSection">
-      <properties />
-    </div>
-    <div class="IngredientSection">
-      <newIngredient />
-    </div>
-    <div class="footer">
-      <Footer />
+  <div class="wrapper">
+    <div class="container" id="main-container">
+      <header class="navBar" id="navbar">
+        <newNavbar />
+      </header>
+      <div class="mobile-bar">
+        <mobileNav />
+      </div>
+      <div class="heroSection">
+        <heroSection />
+      </div>
+      <div class="propSection">
+        <properties />
+      </div>
+      <div class="IngredientSection">
+        <newIngredient />
+      </div>
+      <div class="footer">
+        <Footer />
+      </div>
     </div>
   </div>
 </template>
@@ -58,12 +62,10 @@ export default {
     position: fixed;
     transition: top 0.3s;
     box-shadow: none;
-    .normaly-bar {
-      z-index: 10;
-    }
-    .mobile-bar {
-      visibility: hidden;
-    }
+  }
+  .mobile-bar {
+    visibility: hidden;
+    z-index: 3;
   }
 
   .heroSection {
@@ -108,16 +110,14 @@ export default {
 @media only screen and (max-width: 768px) {
   .container {
     .navBar {
-      .normaly-bar {
-        z-index: 10;
-        visibility: hidden;
-      }
-      .mobile-bar {
-        visibility: visible;
-      }
+      z-index: 10;
+      visibility: hidden;
+    }
+    .mobile-bar {
+      visibility: visible;
     }
     .propSection {
-      height: 180vh;
+      height: max-content;
     }
   }
 }

@@ -542,7 +542,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .container {
-    height: 420vh;
+    height: max-content;
 
     .ingredient-card {
       height: 100vh;
